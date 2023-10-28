@@ -15,12 +15,12 @@ input, label {
 }
 
 a {
-  color: #E60084;
+  color: #000000;
 }
 
 body {
   padding-top: 5vh;
-  background-image: url('../img/bg-register-page.jpg');
+  background-image: url('../img/car2_bg.jpg');
   background-size: cover;
   background-position-y: -150px;
 }
@@ -38,18 +38,33 @@ button {
   width: 450px;
 }
 
+input {
+  background-color: transparent;
+}
+
 /* form */
-#main-container {
+.logo-container {
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 25px;
+}
+.main-container {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 180px;
-  background-color: #FFF;
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 25px;
 }
 
-#main-container h1 {
+.main-container h1 {
   text-align: center;
   margin-bottom: 25px;
   font-size: 1.6rem;
