@@ -79,11 +79,11 @@ class Validator {
   // método para validar strings que só contem letras
   onlyletters(input) {
 
-    let re = /^[A-Za-z]+$/;;
+    let re = /^[0-9]+$/;;
 
     let inputValue = input.value;
 
-    let errorMessage = `Este campo não aceita números nem caracteres especiais`;
+    let errorMessage = `Este campo aceita somente números.`;
 
     if(!re.test(inputValue)) {
       this.printMessage(input, errorMessage);
@@ -183,15 +183,32 @@ class Validator {
 
 }
 
-let form = document.getElementById('register-form');
-let submit = document.getElementById('btn-submit');
-
 let validator = new Validator();
 
-// evento de envio do form, que valida os inputs
-submit.addEventListener('click', function(e) {
-  e.preventDefault();
+const submit = document.getElementById('btn-submit');
 
-  validator.validate(form);
-});
+// Função para salvar dados no localStorage
+
+function saveDataToLocalStorage() {
+  const email = document.querySelector("#email").value;
+  const name = document.querySelector("#name").value;
+  const cpf = document.querySelector("#cpf").value;
+  const password = document.querySelector("#password").value;
+
+
+  // Criar um objeto com os Dados
+
+  const userData = {
+    email: email,
+    name: name,
+    cpf: cpf,
+    password: password,
+  };
+
+  // Converter o objeto em string JSON
+  const userDataJSON = JSON.stringify(userData);
+
+  // Armazenar a string JSON no localStorage
+  localStorage.setItem("userData", userDataJSON);
+}
 
